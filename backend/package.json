@@ -1,0 +1,23 @@
+{
+  "name": "ag-eagle",
+  "version": "1.0.0",
+  "description": "agEagle Test Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamrod/agEagleTest.git"
+  },
+  "author": "jamrod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamrod/agEagleTest/issues"
+  },
+  "homepage": "https://github.com/jamrod/agEagleTest#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
