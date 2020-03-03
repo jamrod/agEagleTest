@@ -4,7 +4,10 @@ const fetch = require('node-fetch')
 const keys = require('./keys')
 // const weatherController = require('./controllers/weather')
 const randomKey = keys.randomKey
+const weatherKey = keys.weatherKey
+
 const app = express()
+app.use(cors())
 
 const getNumbers = (x) => {
     url = 'https://api.random.org/json-rpc/2/invoke'
@@ -34,19 +37,31 @@ const getNumbers = (x) => {
 
 }
 
+const getWeather = (points) => {
+    lat = points[0]
+    lon = points[1]
+    console.log(lat, lon)
+    url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherKey}`
+    console.log(url)
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(res => res.json())
+            .then(res => resolve(res))
+            .catch(err => reject(err))
+    })
+}
 
 
-
-app.use(cors())
 // app.use('/weather', weatherController)
+
 app.get("/:num", async (req, res) => {
     num = req.params.num
-    getNumbers(num)
+    // getNumbers(num)
+    //     .then(results => res.json(results))
+    //     .catch(err => console.log(err))
+    getWeather([40, -100])
         .then(results => res.json(results))
         .catch(err => console.log(err))
-
-
-
 
 });
 
