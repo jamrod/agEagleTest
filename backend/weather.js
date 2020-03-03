@@ -4,8 +4,8 @@ const keys = require('./keys')
 const randomKey = keys.randomKey
 const weatherKey = keys.weatherKey
 
+//api call to random.org to get random numbers for coordinates
 const getNumbers = (x) => {
-    console.log('getnumbers ', x)
     url = 'https://api.random.org/json-rpc/2/invoke'
     bod = {
         "jsonrpc": "2.0",
@@ -33,8 +33,8 @@ const getNumbers = (x) => {
 
 }
 
+//api call to get current weather based on coordinates
 const getWeather = (points) => {
-    console.log('getWeather ', points)
     lat = points[0]
     lon = points[1]
     url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherKey}`
@@ -46,8 +46,8 @@ const getWeather = (points) => {
     })
 }
 
+//turns random numbers into random coordinates, returns array of objects
 const getPoints = (nums) => {
-    console.log('getPoints ', nums)
     return new Promise((resolve, reject) => {
         let points = []
         for (let i = 0; i < nums.length; i = i + 2) {
@@ -55,20 +55,19 @@ const getPoints = (nums) => {
             let lon = nums[i + 1]
             points.push({ lat: lat, lon: lon })
         }
-        console.log('output of getPoints ', points)
         resolve(points)
 
     })
 
 }
 
+//calls getWeather for each set of coordinates
 const getAllWeather = (arr) => {
     let out = []
     return new Promise((resolve, reject) => {
         arr.forEach((item, i) => {
             getWeather([item.lat, item.lon])
                 .then(data => {
-                    console.log('data ', data)
                     out.push(data)
                     i === arr.length - 1 ? resolve(out) : null
                 })
@@ -78,6 +77,7 @@ const getAllWeather = (arr) => {
     })
 }
 
+//gets random coordinates and gets weather based on those coordinates
 const returnData = (num) => {
     const count = num * 2
     return new Promise((resolve, reject) => {
