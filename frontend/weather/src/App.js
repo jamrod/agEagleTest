@@ -53,7 +53,7 @@ class App extends Component {
       <div className="App flex-container-column centered">
         <Header></Header>
         <div className="container">
-          <p>Get snapshots of current weather from around the world! <br />This app will return the current weather from random points around the globe. Enter the number of points you want to search and results will display below. Points requested cannot exceed 60.</p>
+          <p>Get snapshots of current weather from around the world! <br />This app will return the current weather from random points around the globe. Enter the number of points you want to search and results will display below. Points requested cannot exceed 60 per minute.</p>
           <Input apiCall={this.apiCall}></Input>
           <div className="flex-container-row centered">
             {this.state.page >= 1 ? <img src="/icons/arrow-left.svg" alt="left arrow" onClick={() => this.changePage(false)} className="nav" /> : <img src="/icons/arrow-left.svg" alt="left arrow" className="hidden nav" />}
