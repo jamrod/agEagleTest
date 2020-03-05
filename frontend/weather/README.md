@@ -89,7 +89,7 @@ This repo contains both the API in the backend folder and the react app in the f
 
 - Clone the repo from git [https://github.com/jamrod/agEagleTest.git]
 - cd into the backend folder
-- npm install
+- run 'npm install' to install dependencies
 - Create a file called 'keys.json' and put your api keys here in this format
 
 ```
@@ -99,11 +99,11 @@ This repo contains both the API in the backend folder and the react app in the f
 }
 ```
 
-- npm start
+- run 'npm start' to start backend
 
 - cd into the frontend/weather folder
-- npm install
-- npm start
+- run 'npm install' to install dependencies
+- run 'npm start' to start frontend
 
 browse to localhost:3000
 
