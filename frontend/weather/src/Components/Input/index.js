@@ -17,8 +17,8 @@ class Input extends Component {
     }
 
     submit = () => {
-        let num = parseInt(this.state.input)
-        if (num === NaN) {
+        let num = this.state.input
+        if (isNaN(num)) {
             this.setState(prevState => ({ input: '' }));
             return
         } else if (num > 60) {

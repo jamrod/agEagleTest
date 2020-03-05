@@ -21,10 +21,10 @@ Enter a number of points to return and the app will randomly generate that many 
 
 ### Technologies
 
-API Express.js
-Frontend React.js
+Backend - Express.js
+Frontend - React.js
 Random Coordinates created using Random.org API
-Weather data gathered from openweathermap API
+Weather data gathered from openweathermap.org API
 
 ### Models
 
@@ -46,6 +46,7 @@ Weather data gathered from openweathermap API
 
 ### Sample Raw Data
 
+```
 {
 coord: { lon: 38, lat: 48 },
 weather: [
@@ -76,9 +77,63 @@ id: 702320,
 name: 'Makiyivka',
 cod: 200
 }
-
-https://openweathermap.org/weathermap?basemap=map&cities=false&layer=precipitation&lat=39&lon=-105&zoom=7
+```
 
 ## Installation
 
-This repo contains both the API and the react app
+This repo contains both the API in the backend folder and the react app in the frontend folder
+
+Clone the repo from git
+cd into the backend folder
+npm install
+create a file called 'keys.json' and put your api keys here in this format
+
+```
+{
+  "randomKey": "your-random.org-API-key",
+  "weatherKey": "your-openweathermap.org-API-key"
+}
+```
+
+npm start
+
+cd into the frontend/weather folder
+npm install
+npm start
+
+browse to localhost:3000
+
+## Code Snippets
+
+### Backend
+
+This function will run an API call for each set of coordinates in the array and not return the results until all are complete
+
+```
+const getAllWeather = (arr) => {
+    console.log('points ', arr)
+    let out = []
+    return new Promise((resolve, reject) => {
+        arr.forEach((item) => {
+            getWeather([item.lat, item.lon])
+                .then(data => {
+                    out.push(data)
+                    out.length === arr.length ? resolve(out) : null
+                })
+                .catch(err => console.log(err))
+        })
+    })
+}
+```
+
+### Frontend
+
+This function will render the wind direction as a string from the degrees number
+
+```
+const direction = (num) => {
+    const dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
+    const dir = Math.floor(num / 22.5)
+    return dirs[dir]
+}
+```
