@@ -22,8 +22,11 @@ Enter a number of points to return and the app will randomly generate that many 
 ### Technologies
 
 Backend - Express.js
+
 Frontend - React.js
+
 Random Coordinates created using Random.org API
+
 Weather data gathered from openweathermap.org API
 
 ### Models
