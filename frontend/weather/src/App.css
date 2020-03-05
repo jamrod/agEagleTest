@@ -2,12 +2,22 @@
   min-height: 100%;
   text-align: center;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Philosopher", sans-serif;
+  margin: 5px;
+  padding: 5px;
+}
+
+p {
+  margin: 15px;
 }
 
 .container {
   max-width: 500px;
   min-height: 80vh;
-  align-content: space-between;
   flex: 1 0 auto;
 }
 
@@ -24,7 +34,7 @@
 .centered {
   align-items: center;
   justify-content: center;
-  text-align: center;
+  /* width: 100%; */
 }
 
 .footer {
@@ -50,9 +60,11 @@
 }
 
 .row {
+  width: 350px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 5px;
 }
 
 .capitals {
@@ -62,4 +74,8 @@
 .symbol {
   max-width: 100px;
   align-self: center;
+}
+
+.hidden {
+  visibility: hidden;
 }

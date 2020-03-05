@@ -67,11 +67,11 @@ const getAllWeather = (arr) => {
     console.log('points ', arr)
     let out = []
     return new Promise((resolve, reject) => {
-        arr.forEach((item, i) => {
+        arr.forEach((item) => {
             getWeather([item.lat, item.lon])
                 .then(data => {
                     out.push(data)
-                    i === arr.length - 1 ? resolve(out) : null
+                    out.length === arr.length ? resolve(out) : null
                 })
                 .catch(err => console.log(err))
         })

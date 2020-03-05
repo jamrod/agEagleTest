@@ -1,23 +1,6 @@
 # agEagleTest
 
-a web application that displays a map and weather data
-
-## Requirements
-
-### Eng-Test
-
-Thank you for participating in the ageagle engineering test. We would like you to build an application that has the following features:
-
-### API:
-
-    Create a REST api that returns a number of random lat and long points with weather data.
-        The consumer of the api should be able to specifty the number of returned points
-        Weather data can be pulled via an api from Open Weather Map
-        Random numbers should be retreived from an outside source ie: Random.org api
-
-### Webapp:
-
-    Create a webapp that consumes the api that you created and displays the data.
+a web application that displays weather data
 
 ### Notes:
 

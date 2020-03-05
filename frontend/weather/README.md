@@ -1,20 +1,37 @@
-# Weather app
+# Random Weather
 
 Returns current weather from random points across the globe.
 
+## Requirements
+
+### API:
+
+    Create a REST api that returns a number of random lat and long points with weather data.
+        The consumer of the api should be able to specifty the number of returned points
+        Weather data can be pulled via an api from Open Weather Map
+        Random numbers should be retreived from an outside source ie: Random.org api
+
+### Webapp:
+
+    Create a webapp that consumes the api that you created and displays the data.
+
 ## Functionality
 
-Enter a number of points to return and the app will randomly generate that many coordinates and return the current weather at that locale. Will not return more than 10 at a time.
+Enter a number of points to return and the app will randomly generate that many coordinates and return the current weather at that locale. Will not return more than 60 at a time.
 
-## Models
+### Technologies
 
-- Home
+API Express.js
+Frontend React.js
+Random Coordinates created using Random.org API
+Weather data gathered from openweathermap API
 
-  - Input
+### Models
+
+- Input
 
 - Locale
 
-  - State
   - Coordinates, lattitude and longitude
 
 - Weather
@@ -27,9 +44,7 @@ Enter a number of points to return and the app will randomly generate that many 
   - pressure
   - humidity
 
-- Map
-
-## Sample Raw Data
+### Sample Raw Data
 
 {
 coord: { lon: 38, lat: 48 },
@@ -63,3 +78,7 @@ cod: 200
 }
 
 https://openweathermap.org/weathermap?basemap=map&cities=false&layer=precipitation&lat=39&lon=-105&zoom=7
+
+## Installation
+
+This repo contains both the API and the react app

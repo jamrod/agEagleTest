@@ -17,7 +17,14 @@ class Input extends Component {
     }
 
     submit = () => {
-        this.props.apiCall(this.state.input)
+        let num = parseInt(this.state.input)
+        if (num === NaN) {
+            this.setState(prevState => ({ input: '' }));
+            return
+        } else if (num > 60) {
+            num = 60
+        }
+        this.props.apiCall(num)
         this.setState(prevState => ({ input: '' }));
     }
 
@@ -30,7 +37,6 @@ class Input extends Component {
     render() {
         return (
             <div className='input' onKeyDown={(e) => this.keyPressed(e)}>
-                <p>Enter the number of points you want to search</p>
                 <input type='text' ref={(input) => this.input = input}
                     placeholder='enter a number'
                     value={this.state.input}

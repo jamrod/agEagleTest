@@ -40,20 +40,19 @@ function Weather(props) {
         <div className="flex-container-column">
             <h3 className="capitals">{data.weather[0].description}</h3>
             <img className="symbol" src={icon} alt="weather icon" />
-            <p>
+            <div>
                 <div className="row"><span>Temp: </span><span>{data.main.temp} Fahrenheit</span></div>
                 <div className="row"><span>Feels Like: </span><span>{data.main.feels_like} Fahrenheit</span></div>
-            </p>
-            <p>
+            </div>
+            <div>
                 <div className="row"><span>Cloud Cover: </span><span>{data.clouds.all}%</span></div>
                 <div className="row"><span>Precipitation: </span><span>{precipitation()}</span></div>
-            </p>
-            <p>
-                <div className="row"><span>Pressure: </span><span>{data.main.pressure}</span></div>
-                <div className="row"><span>Humidity: </span><span>{data.main.humidity}</span></div>
-                <div className="row"><span>Wind Speed:</span> <span>{data.wind.speed} mph</span></div>
-                <div className="row"><span>Wind Direction:</span> <span>{data.wind.deg} {direction(data.wind.deg)}</span></div>
-            </p>
+            </div>
+            <div>
+                <div className="row"><span>Pressure: </span><span>{data.main.pressure} in</span></div>
+                <div className="row"><span>Humidity: </span><span>{data.main.humidity}%</span></div>
+                <div className="row"><span>Wind:</span> <span>{data.wind.speed} mph {direction(data.wind.deg)}</span></div>
+            </div>
         </div >
     )
 }

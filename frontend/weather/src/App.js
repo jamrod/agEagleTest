@@ -54,12 +54,12 @@ class App extends Component {
       <div className="App flex-container-column centered">
         <Header></Header>
         <div className="container">
-          <p>Hi! Welcome to Random Weather Deets! <br />This app will return the current weather from random points around the globe.</p>
+          <p>Get Snapshots of current weather from around the world! <br />This app will return the current weather from random points around the globe. Enter the number of points you want to search and results will display below. Points requested cannot exceed 60.</p>
           <Input apiCall={this.apiCall}></Input>
           <div className="flex-container-row centered">
-            {this.state.page >= 1 ? <img src="/icons/arrow-left.svg" alt="left arrow" onClick={() => this.changePage(false)} className="nav" /> : null}
+            {this.state.page >= 1 ? <img src="/icons/arrow-left.svg" alt="left arrow" onClick={() => this.changePage(false)} className="nav" /> : <img src="/icons/arrow-left.svg" alt="left arrow" className="hidden nav" />}
             {this.state.data[0] ? <span>Showing {this.state.page + 1} of {this.state.data.length}</span> : null}
-            {this.state.page < this.state.data.length - 1 ? <img src="/icons/arrow-right.svg" alt="right arrow" onClick={() => this.changePage(true)} className="nav" /> : null}
+            {this.state.page < this.state.data.length - 1 ? <img src="/icons/arrow-right.svg" alt="right arrow" onClick={() => this.changePage(true)} className="nav" /> : <img src="/icons/arrow-left.svg" alt="left arrow" className="hidden nav" />}
           </div>
           {this.state.data[this.state.page] ? <Locale data={this.state.data[this.state.page]}></Locale> : null}
 
