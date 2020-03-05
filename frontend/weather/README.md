@@ -28,6 +28,10 @@ Weather data gathered from openweathermap.org API
 
 ### Models
 
+- Header
+
+- Footer
+
 - Input
 
 - Locale
@@ -83,10 +87,10 @@ cod: 200
 
 This repo contains both the API in the backend folder and the react app in the frontend folder
 
-Clone the repo from git
-cd into the backend folder
-npm install
-create a file called 'keys.json' and put your api keys here in this format
+- Clone the repo from git [https://github.com/jamrod/agEagleTest.git]
+- cd into the backend folder
+- npm install
+- Create a file called 'keys.json' and put your api keys here in this format
 
 ```
 {
@@ -95,11 +99,11 @@ create a file called 'keys.json' and put your api keys here in this format
 }
 ```
 
-npm start
+- npm start
 
-cd into the frontend/weather folder
-npm install
-npm start
+- cd into the frontend/weather folder
+- npm install
+- npm start
 
 browse to localhost:3000
 
