@@ -64,7 +64,6 @@ const getPoints = (nums) => {
 
 //calls getWeather for each set of coordinates
 const getAllWeather = (arr) => {
-    console.log('points ', arr)
     let out = []
     return new Promise((resolve, reject) => {
         arr.forEach((item) => {

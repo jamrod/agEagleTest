@@ -7,14 +7,12 @@ const app = express()
 
 app.use(cors())
 
+//trigger API calls based on number of points requested
 app.get("/:num", async (req, res) => {
     const num = req.params.num
     console.log(req.params)
     weather.returnData(num)
-        .then(results => {
-            console.log(results)
-            res.json(results)
-        })
+        .then(results => res.json(results))
         .catch(err => console.log(err))
 })
 
