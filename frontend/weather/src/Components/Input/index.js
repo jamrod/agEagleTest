@@ -17,7 +17,6 @@ class Input extends Component {
     }
 
     submit = () => {
-        console.log('submit')
         this.props.apiCall(this.state.input)
         this.setState(prevState => ({ input: '' }));
     }
@@ -39,7 +38,7 @@ class Input extends Component {
                 />
                 <button className="button" onClick={() => {
                     this.submit()
-                }} >Submit</button>
+                }} >Go!</button>
             </div>
         )
 

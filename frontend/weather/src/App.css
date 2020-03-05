@@ -5,7 +5,8 @@
 }
 
 .container {
-  height: 80vh;
+  max-width: 500px;
+  min-height: 80vh;
   align-content: space-between;
   flex: 1 0 auto;
 }
@@ -27,11 +28,38 @@
 }
 
 .footer {
+  width: 100%;
   justify-content: space-around;
   padding: 1px;
   flex-shrink: 0;
+  margin-top: auto;
 }
 
 .icons {
   max-width: 25px;
+}
+
+.button {
+  padding: 2px;
+  margin: 10px;
+}
+
+.nav {
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.capitals {
+  text-transform: capitalize;
+}
+
+.symbol {
+  max-width: 100px;
+  align-self: center;
 }

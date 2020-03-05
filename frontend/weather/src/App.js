@@ -51,14 +51,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App flex-container-column centered">
         <Header></Header>
         <div className="container">
-          <p>Hi! Welcome to random weather! This app will return the current weather from random points around the globe.</p>
+          <p>Hi! Welcome to Random Weather Deets! <br />This app will return the current weather from random points around the globe.</p>
           <Input apiCall={this.apiCall}></Input>
-          {this.state.page >= 1 ? <img src="/icons/arrow-left.svg" alt="left arrow" onClick={() => this.changePage(false)} /> : null}
-          {this.state.data[0] ? <span>Showing {this.state.page + 1} of {this.state.data.length}</span> : null}
-          {this.state.page < this.state.data.length - 1 ? <img src="/icons/arrow-right.svg" alt="right arrow" onClick={() => this.changePage(true)} /> : null}
+          <div className="flex-container-row centered">
+            {this.state.page >= 1 ? <img src="/icons/arrow-left.svg" alt="left arrow" onClick={() => this.changePage(false)} className="nav" /> : null}
+            {this.state.data[0] ? <span>Showing {this.state.page + 1} of {this.state.data.length}</span> : null}
+            {this.state.page < this.state.data.length - 1 ? <img src="/icons/arrow-right.svg" alt="right arrow" onClick={() => this.changePage(true)} className="nav" /> : null}
+          </div>
           {this.state.data[this.state.page] ? <Locale data={this.state.data[this.state.page]}></Locale> : null}
 
 
