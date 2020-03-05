@@ -1,10 +1,14 @@
 import React from 'react'
 
+//render weather data
 function Weather(props) {
-    let message = 'None'
     const data = props.data
+    //weather symbol from openweathermap.org
     const icon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+
+    //set precipitation text if present
     const precipitation = () => {
+        let message = 'None'
         let hr
         let value
         if (data.rain) {
@@ -30,6 +34,7 @@ function Weather(props) {
         return message
     }
 
+    //set wind direction as a string
     const direction = (num) => {
         const dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
         const dir = Math.floor(num / 22.5)

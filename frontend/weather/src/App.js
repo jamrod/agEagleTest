@@ -16,9 +16,9 @@ class App extends Component {
     }
   }
 
+  //Fetch data from API
   apiCall = (num) => {
     const url = `http://localhost:4000/${num}`
-    console.log("fetching ", url)
     fetch(url, {
       method: "GET",
       headers: {
@@ -27,7 +27,6 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res)
         this.setState({
           data: res
         })
@@ -54,7 +53,7 @@ class App extends Component {
       <div className="App flex-container-column centered">
         <Header></Header>
         <div className="container">
-          <p>Get Snapshots of current weather from around the world! <br />This app will return the current weather from random points around the globe. Enter the number of points you want to search and results will display below. Points requested cannot exceed 60.</p>
+          <p>Get snapshots of current weather from around the world! <br />This app will return the current weather from random points around the globe. Enter the number of points you want to search and results will display below. Points requested cannot exceed 60.</p>
           <Input apiCall={this.apiCall}></Input>
           <div className="flex-container-row centered">
             {this.state.page >= 1 ? <img src="/icons/arrow-left.svg" alt="left arrow" onClick={() => this.changePage(false)} className="nav" /> : <img src="/icons/arrow-left.svg" alt="left arrow" className="hidden nav" />}

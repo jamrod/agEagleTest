@@ -2,7 +2,9 @@ import React from 'react'
 
 import Weather from '../Weather'
 
+//render locale and weather data
 function Locale(props) {
+
     const data = props.data
     return (
         <div className="flex-container-column centered">

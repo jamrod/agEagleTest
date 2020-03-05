@@ -83,7 +83,7 @@ cod: 200
 
 This repo contains both the API in the backend folder and the react app in the frontend folder
 
-Clone the repo from git
+Clone the repo from git [https://github.com/jamrod/agEagleTest.git]
 cd into the backend folder
 npm install
 create a file called 'keys.json' and put your api keys here in this format
@@ -137,7 +137,3 @@ const direction = (num) => {
     return dirs[dir]
 }
 ```
-
-### Submitting:
-
-    Email careers@ageagle.com with a link to a public git repositry

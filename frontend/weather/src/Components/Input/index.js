@@ -8,14 +8,17 @@ class Input extends Component {
         }
     }
 
+    //put cursor in input on page load
     componentDidMount() {
         this.input.focus()
     }
 
+    //get user input and set to state
     getInput = str => {
         this.setState(prevState => ({ input: str }));
     }
 
+    //trigger API call in App
     submit = () => {
         let num = this.state.input
         if (isNaN(num)) {
@@ -28,6 +31,7 @@ class Input extends Component {
         this.setState(prevState => ({ input: '' }));
     }
 
+    //trigger API call on enter
     keyPressed = (e) => {
         if (e.key === 'Enter') {
             this.submit()
